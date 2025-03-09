@@ -1,0 +1,391 @@
+body {/*définition du style général*/
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    background-color: #1F2039;
+    color: #F9F8FF;
+}
+
+a {/*définition du style des liens*/
+    color: black;text-decoration: none;
+    font-family:'Manrope',sans-serif;
+    font-style: normal;
+    font-size: 1em;
+}
+
+a[class*="lien"]:hover{/*soulignement des liens appartenant à la class "lien" au survol (soit accueil, a propos, portfolio)*/
+    text-decoration: underline;
+}
+
+.important {color:#A5B4FC;}
+
+h1 {
+    font-family: 'Monserrat', sans-serif;
+    font-size: 3.5em;
+    font-weight: normal;
+    color:#A5B4FC;
+    margin-bottom: 30px;
+}
+
+h2 {/*espace en-dessous et au-dessus du titre service dans à propos*/
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+
+p,li {/*taille des paragraphes et de la liste après services*/
+    font-size: 1.1em;
+}
+
+em {font-style: normal;}
+
+header,footer {/*couleur de fond en blanc, couleur de texte en noir, marges intérieures haut et bas de 20px et de 50px sur les côtés*/
+    background-color:white;
+    color: #242424;
+    padding: 20px 50px;
+}
+
+section {/*mettre des marges intérieures sur toutes les sections*/
+    padding: 80px; 
+}
+
+.portfolio_photos-portraits{/*pour réduire la marge à la fin, marche un peu mais peu*/
+    padding-bottom: 0px;
+}
+
+.voir_mon_portfolio,.un_projet_ecrivez-moi,.envoyer  {/*couleur de texte en blanc, police, gradient de couleur de fond, bords arrondis et marges intérieures amplifiées dans ecrivez-moi et voir mon portfolio*/
+    color: white;
+    background: linear-gradient(90deg, #8E86B5, #ACAEED);
+    border-radius: 50px;
+    padding: 20px 30px;
+    margin-top: 70px;
+    display: inline-block;
+}
+
+.voir_mon_portfolio,.envoyer{/*pas réussi autrement qu'en tatonnant avec width pour centrer le bouton voir mon portfolio*/
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    width: 21%;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.voir_mon_portfolio:hover,.un_projet_ecrivez-moi:hover,.envoyer:hover{/*gradient de couleur au survol dans ecrivez-moi et voir mon portfolio*/
+    background: linear-gradient(90deg,#696484,#8788BA);
+}
+
+.carre_contenu {/*cadre en bas à droite dans à propos : bordures en couleur et marges intérieures*/
+    border-right: 1px #8e86b5 solid;
+    border-bottom: 1px #8e86b5 solid;
+    padding: 50px;
+}
+
+.images_robbie_lens_logo:hover {/*opacité du logo au survol*/
+    opacity: 0.5;
+}
+
+* {/*réinitialisation des marges pour tous les fichiers*/
+    margin: 0;
+}
+
+.section_a_propos{/*centrer le bloc de texte dans à propos*/
+    width: 700px;
+    margin: auto;
+    padding-bottom: 0px;
+}
+
+.titre_a_propos,.titre_services {/*centrer les titres services et a propos dans la page html à propos*/
+    text-align: center;
+}
+
+.titre_a_propos{
+    margin-bottom: 10px;
+}
+
+nav,footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    margin-left: 30px;
+}
+
+.accueil_introduction{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 1000px;
+    align-items: flex-start;
+}
+
+.accueil_photos,.portfolio_photos-paysages,.portfolio_photos-portraits{
+    background-color: white;
+    color: #242424;
+}
+
+.accueil_photos h2{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.accueil_photos div{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.conteneur_photos-paysages img,.conteneur_photos-portraits img{
+    width: 100%;
+    height: 100%;
+  /* Même si je ne connais pas cette propriété, ça permet aux images de respecter les dimensions de la grid CSS */
+    object-fit: cover; 
+}
+
+.conteneur_photos-paysages,.conteneur_photos-portraits{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:300px 300px 300px;
+    gap:15px;
+}
+
+
+.lien-conteneur-photo{/*lien qui contient l'image et la div hover voir la photo*/
+    position: relative;
+}
+
+.hover_voir_la_photo{/*voir un carré noir opaque avec un titre sur les images en survol : écrire en normal puis none pour ne pas l'afficher de base et remettre flex en :hover*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5 em;
+    background-color:rgba(0, 0, 0, 0.7);
+    display:none;
+}
+
+.lien-conteneur-photo:hover .hover_voir_la_photo{
+    display: flex;
+}
+
+table{/*tableau : bordures fusionnées, tableau centré*/
+    border-collapse: collapse;
+    margin: auto;
+}
+
+caption{/*tableau : titre*/
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 80px;
+}
+
+td{/*tableau : contenu*/
+    border: 1px solid white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+
+th{/*tableau : première ligne*/
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.titre_portfolio{
+    padding-left: 80px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.formulaire h2{
+    color: #A5B4FC;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.conteneur_nom-email{/*grid pour la partie nom et email du formulaire*/
+    width: 70%;
+    margin: auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.conteneur_message{/*grid pour la partie message du formulaire*/
+    width: 70%;
+    margin: auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr;
+}
+
+fieldset{/*concerne les parties du formulaire (bordures automatiques, utiliser padding et non margin sinon ne marche pas)*/
+    border: none;
+    padding-bottom: 20px;
+}
+
+.envoyer{/*bouton envoyer du formulaire (attention bordures automatiques*/
+    width: 15%;
+    margin-top: 20px;
+    border: none;
+
+}
+label{
+    display: block;
+}
+
+.label_nom{/*ordres de priorité pour les grids de formulaire*/
+    order: 1;
+}
+
+.label_email{
+    order: 2;
+}
+
+.input_nom{
+    order: 3;
+}
+
+.input_email{
+    order: 4;
+}
+
+.label_message{
+    order: 5;
+}
+
+.textarea_message{
+    order: 6;
+}
+
+
+
+@media screen and (max-width: 996px) {/*pour rendre le site responsive : Insérez les propriétés CSS ici, avec les sélecteurs*/
+    /*toutes pages*/
+
+    
+    h1{
+        font-size: 2em;
+  }
+
+  header nav{
+    flex-direction: column;
+  }
+
+  header nav img{
+    margin-bottom: 20px;
+  }
+
+
+    p,ul,h1,h2 {/*pour que le texte puisse se dérouler même en petit écran et ne pas sortir des cases*/
+        overflow: auto;
+    }
+
+
+}
+
+@media screen and (max-width: 996px) {/*page d'accueil*/
+    .accueil_introduction,form {
+        max-width: 1000px;
+        
+    }
+
+    .accueil_introduction{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .accueil_introduction img{/*pour dire que l'image passe devant le texte en responsive telephone*/
+        order: 1;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .accueil_introduction div{/*ne fonctionnait pas quand on mettait l'image dans une div*/
+        order: 2;
+    }
+    
+    .accueil_introduction a {
+        margin-top: 30px;
+    }
+
+    .accueil_photos div{/*pour dire que les images se succèdent en colonne*/
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .conteneur_nom-email{
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .label_nom{
+        order: 1;
+    }
+    .input_nom{
+        order: 2;
+    }
+    .label_email{
+        order: 3;
+    }
+    .input_email{
+        order: 4;
+    }
+    .label_message{
+        order: 5;
+    }
+    .textarea_message{
+        order: 6;  
+    }
+
+    .envoyer{/*fait varier la taille du bouton envoyer qui ne passe pas en dessous de 120px*/
+        min-width: 120px;
+    }
+}
+
+@media screen and (max-width: 996px) {/*page a propos*/
+    .tableau-tarifs {/*page a propos : pour que le tableau disparaisse sur la version portables et tablettes de moins de 1000px*/
+        display: none;
+    }
+
+    .voir_mon_portfolio{
+        margin-bottom: 50px;
+    }
+
+    .section_a_propos{/*mettre dans la bonne direction et que la largeur de la section soit compliante en responsive*/
+        flex-direction: column;
+        max-width: 70%;
+    }
+
+    .titre_a_propos{/*réduire l'espace entre le titre et le texte en dessous en responsive*/
+        margin-bottom: 0px;
+    }
+
+    .voir_mon_portfolio{/*fait varier la taille du bouton voir mon portfolio qui ne passe pas en dessous de 120px*/
+        min-width: 120px;
+    }
+}
+
+@media screen and (max-width: 996px) {/*page porte-folio*/
+
+.conteneur_photos-paysages,.conteneur_photos-portraits{/*remettre les photos sur une seule colonne*/
+    grid-template-columns: 1fr;
+  }
+}
