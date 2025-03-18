@@ -49,9 +49,6 @@ section {/*mettre des marges intérieures sur toutes les sections*/
     padding: 80px; 
 }
 
-.portfolio_photos-portraits{/*pour réduire la marge à la fin, marche un peu mais peu*/
-    padding-bottom: 0px;
-}
 
 .voir_mon_portfolio,.un_projet_ecrivez-moi,.envoyer  {/*couleur de texte en blanc, police, gradient de couleur de fond, bords arrondis et marges intérieures amplifiées dans ecrivez-moi et voir mon portfolio*/
     color: white;
@@ -149,13 +146,23 @@ nav a {
     object-fit: cover; 
 }
 
-.conteneur_photos-paysages,.conteneur_photos-portraits{
+.conteneur_photos-paysages{
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     grid-template-rows:300px 300px 300px;
     gap:15px;
 }
 
+.portfolio_photos-paysages{
+    padding-bottom: 0px;
+}
+
+.conteneur_photos-paysages,.conteneur_photos-portraits{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:300px 300px;
+    gap:15px;
+}
 
 .lien-conteneur-photo{/*lien qui contient l'image et la div hover voir la photo*/
     position: relative;
